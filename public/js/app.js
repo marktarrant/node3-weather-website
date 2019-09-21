@@ -22,7 +22,7 @@ weatherForm.addEventListener('submit', (e) => {
     messageTwo.textContent = ""
 
     //fetch api is a function which provides access to the browser
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
 
         //fetches the json data and parses it
         response.json().then((data) => {
