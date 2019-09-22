@@ -11,7 +11,7 @@ const forecast = (latitude, longitude, callback) => {
             callback('Unable to find location, try another search')
         } else {
             //stated undefined as first expected value is for the error, however there is no error here
-            callback(undefined, body.daily.data[0].summary + " It is currently " +  body.currently.temperature + " degrees out. There is a " + body.currently.precipProbability + "% chance of rain.")
+            callback(undefined, body.daily.data[0].summary + " It is currently " +  body.currently.temperature + " degrees out. There is a " + (body.daily.data[0].precipProbability * 100) + "% chance of rain throughout the day. Today, expect a maximum temperature of " + body.daily.data[0].temperatureHigh + " and a low of " + body.daily.data[0].temperatureLow + ".")
         }
     })
 }
